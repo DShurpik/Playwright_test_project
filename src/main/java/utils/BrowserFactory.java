@@ -7,6 +7,10 @@ import com.microsoft.playwright.Playwright;
 import static config.ConfigurationManager.config;
 
 public enum BrowserFactory {
+    /**Enum BrowserFactory содержит три типа браузеров: CHROMIUM, FIREFOX, и WEBKIT.
+     Каждый из этих типов имеет абстрактный метод createInstance, который создает экземпляр браузера.
+     Метод options() возвращает настройки для запуска браузера (например, headless и slowMo из
+     конфигурации).*/
 
     CHROMIUM {
         public Browser createInstance(final Playwright playwright) {

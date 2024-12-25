@@ -3,7 +3,10 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({"system:properties", "classpath:config.properties", "classpath:allure.properties"})
+@Config.Sources({"system:properties",
+        "classpath:config.properties",
+        "classpath:allure.properties",
+        "classpath:config-${env}.properties"})
 public interface Configuration extends Config {
 
     @Key("allure.results.directory")
@@ -25,4 +28,10 @@ public interface Configuration extends Config {
     int timeout();
 
     boolean video();
+
+    @Key("app.name")
+    String appName();
+
+    @Key("log.level")
+    String logLevel();
 }

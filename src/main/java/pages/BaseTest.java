@@ -27,7 +27,9 @@ public abstract class BaseTest {
 
     @BeforeSuite
     public void initBrowser() {
+        //инициализация Playwright для запуска браузеров.
         playwright = Playwright.create();
+        //вызов статического метода, который возвращает браузер, настроенный в BrowserFactory
         browser = BrowserManager.getBrowser(playwright);
 
         allureEnvironmentWriter(
